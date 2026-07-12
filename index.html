@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Productivity Dashboard</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- Remix Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- ================= HEADER ================= -->
+
+      <header class="header">
+        <div class="logo">
+          <i class="ri-stack-line"></i>
+          <h2>Productivity Dashboard</h2>
+        </div>
+
+        <div class="header-right">
+          <div class="weather">
+            <i class="ri-cloud-line"></i>
+            <span id="weather">Loading...</span>
+          </div>
+
+          <div class="datetime">
+            <p id="date"></p>
+            <h3 id="time"></h3>
+          </div>
+
+          <div class="theme">
+            <label class="switch">
+              <input type="checkbox" id="themeToggle" />
+
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </header>
+
+      <!-- ================= DASHBOARD ================= -->
+
+      <section id="dashboard">
+        <h1 id="greeting">Good Morning</h1>
+
+        <p class="subtitle">Choose a feature to boost your productivity.</p>
+
+        <div class="card-container">
+          <div class="card" data-page="todoPage">
+            <i class="fa-solid fa-list-check"></i>
+
+            <h3>Todo List</h3>
+
+            <p>Manage your daily tasks.</p>
+          </div>
+
+          <div class="card" data-page="plannerPage">
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <h3>Daily Planner</h3>
+
+            <p>Plan your day.</p>
+          </div>
+
+          <div class="card" data-page="goalPage">
+            <i class="fa-solid fa-bullseye"></i>
+
+            <h3>Daily Goals</h3>
+
+            <p>Track your goals.</p>
+          </div>
+
+          <div class="card" data-page="pomodoroPage">
+            <i class="fa-solid fa-clock"></i>
+
+            <h3>Pomodoro</h3>
+
+            <p>Focus with timer.</p>
+          </div>
+
+          <div class="card" data-page="quotePage">
+            <i class="fa-solid fa-quote-left"></i>
+
+            <h3>Quotes</h3>
+
+            <p>Stay Motivated.</p>
+          </div>
+
+          <div class="card" data-page="utilityPage">
+            <i class="fa-solid fa-toolbox"></i>
+
+            <h3>Utilities</h3>
+
+            <p>Useful dashboard tools.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TODO PAGE ================= -->
+
+      <section id="todoPage" class="page hidden">
+        <button class="back">← Back</button>
+
+        <h2>Todo List</h2>
+
+        <div class="inputBox">
+          <input type="text" id="todoInput" placeholder="Enter Task" />
+
+          <button id="addTodo">Add Task</button>
+        </div>
+
+        <ul id="todoList"></ul>
+      </section>
+
+      <!-- ================= PLANNER PAGE ================= -->
+
+      <section id="plannerPage" class="page hidden">
+        <button class="back">← Back</button>
+
+        <h2>Daily Planner</h2>
+
+        <div class="inputBox">
+          <input type="time" id="plannerTime" />
+
+          <input type="text" id="plannerTask" placeholder="Enter Task" />
+
+          <button id="addPlanner">Add</button>
+        </div>
+
+        <ul id="plannerList"></ul>
+      </section>
+
+      <!-- ================= GOALS PAGE ================= -->
+
+      <section id="goalPage" class="page hidden">
+        <button class="back">← Back</button>
+
+        <h2>Daily Goals</h2>
+
+        <div class="inputBox">
+          <input type="text" id="goalInput" placeholder="Enter Goal" />
+
+          <button id="addGoal">Add Goal</button>
+        </div>
+
+        <ul id="goalList"></ul>
+
+        <div class="progress">
+          <div id="progress"></div>
+        </div>
+
+        <p id="progressText">0 of 0 Completed</p>
+      </section>
+      <!-- ================= POMODORO PAGE ================= -->
+
+      <section id="pomodoroPage" class="page hidden">
+        <button class="back">← Back</button>
+
+        <h2>Pomodoro Timer</h2>
+
+        <div id="timer">25:00</div>
+
+        <div class="timer-buttons">
+          <button id="startTimer">Start</button>
+
+          <button id="pauseTimer">Pause</button>
+
+          <button id="resetTimer">Reset</button>
+        </div>
+      </section>
+
+      <!-- ================= QUOTES PAGE ================= -->
+
+      <section id="quotePage" class="page hidden">
+        <button class="back">← Back</button>
+
+        <h2>Daily Motivation</h2>
+
+        <div class="quoteBox">
+          <p id="quote">Success begins with self discipline.</p>
+
+          <h4 id="author">Productivity Dashboard</h4>
+        </div>
+
+        <button id="newQuote">New Quote</button>
+      </section>
+
+      <!-- ================= UTILITIES PAGE ================= -->
+
+      <section id="utilityPage" class="page hidden">
+        <button class="back">← Back</button>
+
+        <h2>Dashboard Utilities</h2>
+
+        <div class="utility-grid">
+          <div class="utility-card">
+            <h3>Welcome</h3>
+
+            <p id="welcome">Welcome User</p>
+          </div>
+
+          <div class="utility-card">
+            <h3>Today's Date</h3>
+
+            <p id="today"></p>
+          </div>
+
+          <div class="utility-card">
+            <h3>Current Time</h3>
+
+            <p id="clock"></p>
+          </div>
+
+          <div class="utility-card">
+            <h3>Daily Tip</h3>
+
+            <p id="tip"></p>
+          </div>
+
+          <div class="utility-card">
+            <h3>Battery</h3>
+
+            <p id="battery">Loading...</p>
+          </div>
+
+          <div class="utility-card">
+            <h3>Internet</h3>
+
+            <p id="internet"></p>
+          </div>
+
+          <div class="utility-card">
+            <h3>Visits</h3>
+
+            <p id="visits"></p>
+          </div>
+
+          <div class="utility-card">
+            <h3>Screen Size</h3>
+
+            <p id="screen"></p>
+          </div>
+
+          <div class="utility-card">
+            <h3>Stopwatch</h3>
+
+            <h2 id="stopwatch">00:00:00</h2>
+
+            <div class="timer-buttons">
+              <button onclick="startStopwatch()">Start</button>
+
+              <button onclick="stopStopwatch()">Stop</button>
+
+              <button onclick="resetStopwatch()">Reset</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

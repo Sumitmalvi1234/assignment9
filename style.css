@@ -1,0 +1,800 @@
+/* ===============================
+   RESET
+================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  color: #fff;
+  background: url("https://wonderfulengineering.com/wp-content/uploads/2016/01/live-wallpapers-10.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  transition: 0.4s;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* ===============================
+   HEADER
+================================== */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 30px;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(15px);
+
+  border-radius: 20px;
+
+  margin-bottom: 30px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.logo i {
+  font-size: 35px;
+
+  color: #2f7df7;
+}
+
+.logo h2 {
+  font-size: 28px;
+}
+
+.header-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+}
+
+.weather {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 18px;
+}
+
+.weather i {
+  color: orange;
+}
+
+.datetime {
+  text-align: right;
+}
+
+.datetime p {
+  font-size: 15px;
+}
+
+.datetime h3 {
+  font-size: 24px;
+}
+
+/* ===============================
+   THEME SWITCH
+================================== */
+
+.switch {
+  position: relative;
+
+  display: inline-block;
+
+  width: 60px;
+
+  height: 30px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+
+  inset: 0;
+
+  background: #bcbcbc;
+
+  border-radius: 30px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+
+  position: absolute;
+
+  width: 24px;
+
+  height: 24px;
+
+  left: 3px;
+
+  top: 3px;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background: #3973ff;
+}
+
+input:checked + .slider::before {
+  transform: translateX(30px);
+}
+
+/* ===============================
+   DASHBOARD
+================================== */
+
+#greeting {
+  text-align: center;
+
+  font-size: 42px;
+
+  margin-top: 20px;
+
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+
+  color: #ddd;
+
+  margin-bottom: 40px;
+
+  font-size: 18px;
+}
+
+/* ===============================
+   CARD GRID
+================================== */
+
+.card-container {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+  gap: 25px;
+}
+
+/* ===============================
+   CARD
+================================== */
+
+.card {
+  background: rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(18px);
+
+  border-radius: 25px;
+
+  padding: 35px;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  transition: 0.35s;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card i {
+  font-size: 60px;
+
+  color: #2f7df7;
+
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+
+  font-size: 24px;
+}
+
+.card p {
+  color: #f2f2f2;
+
+  font-size: 15px;
+}
+/* ===============================
+   PAGE
+================================== */
+
+.page {
+  background: rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(15px);
+
+  padding: 35px;
+
+  border-radius: 25px;
+
+  min-height: 650px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.hidden {
+  display: none;
+}
+
+/* ===============================
+   BACK BUTTON
+================================== */
+
+.back {
+  padding: 12px 22px;
+
+  border: none;
+
+  outline: none;
+
+  border-radius: 10px;
+
+  background: #3973ff;
+
+  color: #fff;
+
+  cursor: pointer;
+
+  font-size: 16px;
+
+  margin-bottom: 25px;
+
+  transition: 0.3s;
+}
+
+.back:hover {
+  background: #245de0;
+}
+
+/* ===============================
+   PAGE TITLE
+================================== */
+
+.page h2 {
+  margin-bottom: 25px;
+
+  font-size: 30px;
+}
+
+/* ===============================
+   INPUT BOX
+================================== */
+
+.inputBox {
+  display: flex;
+
+  gap: 15px;
+
+  margin-bottom: 30px;
+
+  flex-wrap: wrap;
+}
+
+.inputBox input {
+  flex: 1;
+
+  min-width: 220px;
+
+  padding: 15px;
+
+  border: none;
+
+  outline: none;
+
+  border-radius: 12px;
+
+  font-size: 16px;
+}
+
+.inputBox button {
+  padding: 15px 25px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #3973ff;
+
+  color: #fff;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.inputBox button:hover {
+  background: #245de0;
+}
+
+/* ===============================
+   LIST
+================================== */
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 15px;
+
+  margin-bottom: 15px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  color: #222;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+li span {
+  flex: 1;
+
+  word-break: break-word;
+}
+
+li input[type="checkbox"] {
+  width: 20px;
+
+  height: 20px;
+
+  cursor: pointer;
+}
+
+.deleteGoal,
+.deleteTodo,
+.deletePlanner {
+  background: #ff4d4d;
+
+  color: #fff;
+
+  border: none;
+
+  padding: 8px 14px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.deleteGoal:hover,
+.deleteTodo:hover,
+.deletePlanner:hover {
+  background: #d63031;
+}
+
+/* ===============================
+   PLANNER
+================================== */
+
+#plannerList li {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.plannerTime {
+  font-weight: bold;
+
+  color: #3973ff;
+}
+
+/* ===============================
+   GOAL PROGRESS
+================================== */
+
+.progress {
+  width: 100%;
+
+  height: 18px;
+
+  background: #dcdcdc;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  margin-top: 25px;
+}
+
+#progress {
+  width: 0;
+
+  height: 100%;
+
+  background: linear-gradient(90deg, #00c853, #64dd17);
+
+  transition: 0.5s;
+}
+
+#progressText {
+  text-align: center;
+
+  margin-top: 15px;
+
+  font-weight: bold;
+
+  font-size: 16px;
+}
+/* ===============================
+   POMODORO TIMER
+================================== */
+
+#timer {
+  width: 260px;
+
+  height: 260px;
+
+  margin: 40px auto;
+
+  border: 12px solid #ff5f5f;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 55px;
+
+  font-weight: bold;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.timer-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  margin-top: 35px;
+
+  flex-wrap: wrap;
+}
+
+.timer-buttons button {
+  padding: 14px 30px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  color: #000000;
+
+  cursor: pointer;
+
+  font-size: 16px;
+
+  transition: 0.3s;
+}
+
+.timer-buttons button:hover {
+  transform: translateY(-3px);
+}
+
+#startTimer {
+  background: #28a745;
+}
+
+#pauseTimer {
+  background: #ff9800;
+}
+
+#resetTimer {
+  background: #e53935;
+}
+
+/* ===============================
+   QUOTE BOX
+================================== */
+
+.quoteBox {
+  max-width: 700px;
+
+  margin: 40px auto;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  color: #222;
+
+  padding: 40px;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+#quote {
+  font-size: 24px;
+
+  font-style: italic;
+
+  line-height: 1.6;
+
+  margin-bottom: 20px;
+}
+
+#author {
+  color: #666;
+
+  font-size: 18px;
+}
+
+#newQuote {
+  display: block;
+
+  margin: 30px auto;
+
+  padding: 15px 35px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #7d4cff;
+
+  color: #fff;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+#newQuote:hover {
+  background: #6236f5;
+}
+
+/* ===============================
+   UTILITIES
+================================== */
+
+.utility-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 25px;
+
+  margin-top: 30px;
+}
+
+.utility-card {
+  background: rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(15px);
+
+  border-radius: 20px;
+
+  padding: 25px;
+
+  text-align: center;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.utility-card h3 {
+  margin-bottom: 15px;
+}
+
+.utility-card p {
+  font-size: 18px;
+
+  word-break: break-word;
+}
+
+#stopwatch {
+  font-size: 32px;
+
+  margin: 20px 0;
+
+  font-weight: bold;
+
+  color: black;
+}
+
+/* ===============================
+   DARK MODE
+================================== */
+
+body.dark {
+  background: #111827;
+
+  color: #fff;
+}
+
+body.dark .header,
+body.dark .page,
+body.dark .card,
+body.dark .utility-card {
+  background: rgba(30, 41, 59, 0.88);
+
+  color: #fff;
+}
+
+body.dark .quoteBox {
+  background: #1e293b;
+
+  color: #fff;
+}
+
+body.dark input {
+  background: #334155;
+
+  color: #fff;
+}
+
+body.dark li {
+  background: #334155;
+
+  color: #fff;
+}
+
+body.dark .subtitle,
+body.dark .datetime p,
+body.dark #author {
+  color: #d1d5db;
+}
+
+/* ===============================
+   RESPONSIVE
+================================== */
+
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .header-right {
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  #greeting {
+    font-size: 30px;
+  }
+
+  .card {
+    padding: 25px;
+  }
+
+  #timer {
+    width: 220px;
+
+    height: 220px;
+
+    font-size: 45px;
+  }
+
+  .quoteBox {
+    padding: 25px;
+  }
+
+  .inputBox {
+    flex-direction: column;
+  }
+
+  .inputBox button {
+    width: 100%;
+  }
+
+  .timer-buttons {
+    flex-direction: column;
+  }
+
+  .timer-buttons button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .header {
+    padding: 15px;
+  }
+
+  .logo h2 {
+    font-size: 22px;
+  }
+
+  .card i {
+    font-size: 45px;
+  }
+
+  .card h3 {
+    font-size: 20px;
+  }
+
+  #timer {
+    width: 180px;
+
+    height: 180px;
+
+    font-size: 35px;
+  }
+
+  .page {
+    padding: 20px;
+  }
+
+  .utility-grid {
+    grid-template-columns: 1fr;
+  }
+}
